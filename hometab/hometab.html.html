@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>kowshik - Animated Tab Menu</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.6.0/fonts/remixicon.css" rel="stylesheet">
+  <style>
+
+
+
+:root {
+  --white: #ffffff;
+  --light-grey: #edf0f1;
+  --violet: #655be1;
+  --dark-violet: #5146e1;
+  --black: #21232a;
+  --red:red;
+  --green:green;
+}
+
+* {
+ 
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  text-align: center;
+  padding: 0 20px;
+  color: var(--white);
+  height: 100vh;
+  background-size: cover;
+    background-position: center;
+}
+
+.container {
+    padding-top: 200px;
+}
+
+.nav {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  max-width: 300px;
+  padding-bottom: 10px;
+  border-radius: 5px 5px 25px 25px;
+  margin: 300px auto 0;
+  background: var(--white);
+  
+}
+
+.nav [type="checkbox"] {
+  position: absolute;
+ 
+}
+
+.nav [type="checkbox"] + label {
+  position: relative;
+  width: 75px;
+  height: 75px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  cursor: pointer;
+  z-index: 1;
+  background: var(--black);
+  border-radius: 50%;
+  transform: translateY(-50%);
+  transition: all 0.2s;
+}
+
+.nav [type="checkbox"] + label:hover {
+  background: var(--red);
+}
+
+.menu li {
+  position: absolute;
+  top: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: all 0.5s;
+}
+
+.menu li:nth-child(1) {
+  transition-delay: 0.2s;
+}
+
+.menu li:nth-child(2) {
+  transition-delay: 0.15s;
+}
+
+.menu li:nth-child(3) {
+  transition-delay: 0.1s;
+}
+
+.menu li:nth-child(4) {
+  transition-delay: 0.05s;
+}
+
+.menu li a  {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--violet);
+  }
+
+
+.menu li a span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateY(calc(-100% - 5px));
+  width: 100%;
+  font-size: 13px;
+  opacity: 0;
+  transition: opacity 0.6s;
+  color: var(--white);
+  font-weight: bold;
+  
+}
+
+
+.nav input:checked + label {
+  background: var(--black);
+  transform: translateY(calc(-50% + 4px));
+}
+
+.nav input:checked ~ .menu li:nth-child(1) {
+  top: -210px;
+  transition-delay: 0.1s;
+}
+
+.nav input:checked ~ .menu li:nth-child(2) {
+  top: -160px;
+  left: calc(50% - 75px);
+  transition-delay: 0.2s;
+}
+
+.nav input:checked ~ .menu li:nth-child(3) {
+  top: -160px;
+  left: calc(50% + 75px);
+  transition-delay: 0.3s;
+}
+
+.nav input:checked ~ .menu li:nth-child(4) {
+  top: -110px;
+  transition-delay: 0.4s;
+}
+
+.nav input:checked ~ .menu li a span {
+  opacity: 1;
+  
+}
+.bg-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index:-1;
+            object-fit: cover;
+  </style>
+</head>
+<body>
+<video class="bg-video" autoplay muted loop>
+        <source src="https://cdn.pixabay.com/video/2016/05/22/3260-167695252_large.mp4" type="video/mp4">
+        
+    </video> 
+<div class="container"> <nav class="nav"> <input id="menu" type="checkbox"> 
+<label for="menu">Menu</label> 
+ <ul class="menu"> 
+ <li><a href="https://github.com/kowshik7820"> <span>Projects</span> 
+ <i class="ri-user-location-line"></i> </a> </li> 
+ <li> <a href="https://kowshik7820.github.io/CollegeGroupProjects/myportfolio/index.html"> 
+ <span>Portfolio</span><i class="ri-list-check-3"></i> </a> </li> 
+ <li><a href="https://www.linkedin.com/in/kowshik-madasi-293a6030b/"> 
+  <span>About</span> <i class="ri-team-line"></i> </a> </li>
+<li><a href="https://kowshik7820.github.io/CollegeGroupProjects/contactform/contact.html">
+ <span>Contact</span><i class="ri-contacts-line"></i> </a> </li> 
+</ul> 
+</nav> 
+</div>     
+</body> 
+</html>
