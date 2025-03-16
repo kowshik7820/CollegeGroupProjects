@@ -1,0 +1,114 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Login page</title>
+<style>
+      body {
+        font-family: "Georgia", serif;
+        background-size: cover;
+        color: white;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+
+      .title{
+          display: flex;
+          color:black;
+          align-items: center;
+          margin-bottom:500px;
+          margin-left:500px;
+          font-size:70px;
+          position:absolute;
+          justify-content:right;
+          }
+       .container{
+        display: flex;
+        align-items: center;
+        justify-content: center; 
+        }
+        
+     img{
+        width: 700%;
+        border-radius: 200px;
+        margin-left:200px; 
+        border-radius:400px;
+        justify-content: space-between;
+      }
+
+
+     form{
+        margn-right:80px;
+      }
+  
+      input {
+      
+        background-color: lavender;
+        text-color: black;
+        width: 70%;
+        padding: 10px;
+        margin: 10px 10px;
+        margin-right:900px;
+        border-radius: 9px;
+                font-size: 20px;
+      }
+      input[type="text"]:hover {
+        background-color: light lavender;
+        transform: scale(1.05);
+      }      
+      input[type="password"]:hover {
+        background-color: light lavender;
+        transform: scale(1.05);
+      }      
+
+      input[type="submit"] {
+        background-color: blue;
+        color: white;
+        font-weight: bold;
+        width: 70%;
+        padding: 10px;
+        margin: 10px 10px;
+        margin-right:900px;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+
+input[type="submit"]:hover {
+        background-color: light blue;
+        transform: scale(1.05);
+      }      
+        .login-form {
+    display: flex;
+    justify-content: space-between;
+  }
+      
+    </style>
+</head>
+<body>
+<section class="title">
+<h1>LOGIN PAGE</h1>
+</section>
+
+    <section class="container">
+      <img src="https://imgs.search.brave.com/JJtAIduQVZZaALeEy1mNVQmazy2HwbAGsR3YEwxr834/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/cHJlbWl1bS1waG90/by92aXN1YWwtcmVw/cmVzZW50YXRpb24t/c3R1ZGVudF85MzE4/NzgtMTc4ODE0Lmpw/Zz9zZW10PWFpc19o/eWJyaWQ" alt="student-img" /> <br>
+     
+
+   
+<form action="login">
+	<input type="text" placeholder="Enter username" name="username"><br>
+	<input type="password" placeholder="Enter password" name="pass"><br>
+		<input type="password" placeholder="Re-enter password" name="pass"><br>
+	
+	<input type="submit" value="Login">	
+</form>
+ </section>
+ <% if(request.getParameter("error") != null) { %>
+        <p style="color: red;">Invalid credentials. Please try again.</p>
+    <% } %>
+</body>
+</html>
